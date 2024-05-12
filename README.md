@@ -6,6 +6,26 @@ Welcome to the GitHub repository for MetaMapper, a cutting-edge mapping library 
 
 MetaMapper stands out by not requiring explicit DTOs, reducing boilerplate code and streamlining the development process. This feature makes it uniquely advantageous for projects where maintaining numerous DTOs becomes cumbersome.
 
+## How MetaMapper Works and Its Underlying Mechanics
+
+MetaMapper leverages advanced .NET features to provide a highly efficient mapping solution that eliminates the need for explicit Data Transfer Objects (DTOs). Here's an overview of how it works and why it's fast:
+
+### Underlying Mechanics
+
+1. **Reflection and Expression Trees**: MetaMapper uses reflection to inspect the properties of the source and target types at runtime. It then constructs expression trees to represent the mapping operations. These expression trees are compiled into executable code, which is much faster than using reflection at runtime for each mapping operation.
+
+2. **Caching Mechanism**: Once the expression trees are compiled, the resulting delegates are cached. This means that the first mapping operation might take slightly longer (due to the overhead of reflection and compilation), but subsequent mappings are extremely fast as they utilize the cached compiled code.
+
+3. **No Intermediate DTOs**: Unlike traditional mappers that require defining DTOs, MetaMapper maps directly between the source and target types. This direct mapping reduces overhead and improves performance because there's no need to instantiate and populate intermediate objects.
+
+
+### Why It's Fast
+
+- **Precompiled Expressions**: The use of precompiled expression trees significantly reduces the runtime overhead compared to using reflection for each mapping operation.
+- **Caching**: Storing the compiled mapping functions in a cache eliminates the need to recompile them for each mapping operation, providing a significant performance boost.
+- **Direct Mapping**: By avoiding the creation of intermediate DTOs, MetaMapper reduces the number of operations required to map data from the source to the target.
+
+
 ## How to Use MetaMapper
 
 MetaMapper is designed for ease of use. Here's a simple example to get you started:
