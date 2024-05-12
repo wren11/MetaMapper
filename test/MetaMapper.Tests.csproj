@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MetaMapper\MetaMapper.csproj" />
+    <ProjectReference Include="..\src\MetaMapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
